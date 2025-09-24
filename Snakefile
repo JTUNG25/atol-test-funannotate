@@ -85,6 +85,10 @@ rule reformat:
         temp("results/{genome}/reformat/genome.fa"),
     log:
         "logs/reformat/{genome}.log",
+    threads: 1
+    resources:
+        runtime=10,
+        mem_gb=4,
     container:
         bbmap
     shell:
