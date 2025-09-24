@@ -1,5 +1,5 @@
 def lookup_predict_params(wildcards):
-    return(genome_config[wildcards.genome])
+    return genome_config[wildcards.genome]
 
 
 # container
@@ -16,7 +16,10 @@ min_training_models = 20
 genome_config = {
     "A_magna": {"busco_seed_species": "chicken", "busco_db": "passeriformes_obd10"},
     "E_pictum": {"busco_seed_species": "chicken", "busco_db": "passeriformes_obd10"},
-    "R_gram": {"busco_seed_species": "botrytis_cinerea", "busco_db": "helotiales_obd10"},
+    "R_gram": {
+        "busco_seed_species": "botrytis_cinerea",
+        "busco_db": "helotiales_obd10",
+    },
     "X_john": {"busco_seed_species": "maize", "busco_db": "liliopsida_obd10"},
     "T_triandra": {"busco_seed_species": "maize", "busco_db": "poales_obd10"},
     "H_bino": {"busco_seed_species": "chicken", "busco_db": "sauropsida_obd10"},
@@ -49,7 +52,10 @@ rule predict:
         min_training_models=min_training_models,
     log:
         "logs/predict_results/{genome}.log",
-    threads: workflow.cores
+    threads: 32
+    resources:
+        runtime=int(24 * 60),
+        mem_gb=64,
     container:
         funannotate
     shell:
@@ -59,7 +65,7 @@ rule predict:
         "--input {params.fasta} "
         "--out {params.wd} "
         "--species {wildcards.genome} "
-        '--busco_seed_species {params.predict_params[busco_seed_species]} '
+        "--busco_seed_species {params.predict_params[busco_seed_species]} "
         "--busco_db {params.predict_params[busco_db]} "
         "--header_length {params.header_length} "
         "--database {params.db} "
