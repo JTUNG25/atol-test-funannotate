@@ -80,7 +80,7 @@ rule predict:
 
 rule reformat:
     input:
-        "data/{genome}.fasta",
+        "data/genomes/{genome}.fasta",
     output:
         temp("results/{genome}/reformat/genome.fa"),
     log:
