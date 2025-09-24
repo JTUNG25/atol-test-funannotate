@@ -14,16 +14,16 @@ gm_key = "data/gm_key_64"
 header_length = 200
 min_training_models = 20
 genome_config = {
-    "A_magna": {"busco_seed_species": "chicken", "busco_db": "passeriformes_obd10"},
-    "E_pictum": {"busco_seed_species": "chicken", "busco_db": "passeriformes_obd10"},
+    "A_magna": {"busco_seed_species": "chicken", "busco_db": "passeriformes_odb10"},
+    "E_pictum": {"busco_seed_species": "chicken", "busco_db": "passeriformes_odb10"},
     "R_gram": {
         "busco_seed_species": "botrytis_cinerea",
-        "busco_db": "helotiales_obd10",
+        "busco_db": "helotiales_odb10",
     },
-    "X_john": {"busco_seed_species": "maize", "busco_db": "liliopsida_obd10"},
-    "T_triandra": {"busco_seed_species": "maize", "busco_db": "poales_obd10"},
-    "H_bino": {"busco_seed_species": "chicken", "busco_db": "sauropsida_obd10"},
-    "P_vit": {"busco_seed_species": "chicken", "busco_db": "sauropsida_obd10"},
+    "X_john": {"busco_seed_species": "maize", "busco_db": "liliopsida_odb10"},
+    "T_triandra": {"busco_seed_species": "maize", "busco_db": "poales_odb10"},
+    "H_bino": {"busco_seed_species": "chicken", "busco_db": "sauropsida_odb10"},
+    "P_vit": {"busco_seed_species": "chicken", "busco_db": "sauropsida_odb10"},
 }
 
 
