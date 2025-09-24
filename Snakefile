@@ -7,20 +7,20 @@ bbmap = "docker://quay.io/biocontainers/bbmap:39.01--h92535d8_1"
 funannotate = "docker://ghcr.io/tomharrop/container-funannotate:1.8.15_cv4"
 
 # Funannotate data
-db_path = "data/funannotate/db"
-gm_key = "data/gm_key"
+db_path = "data/funannotate_db"
+gm_key = "data/gm_key_64"
 
 # config
 header_length = 200
 min_training_models = 20
 genome_config = {
-    "A_magna": {"busco_seed_species": "chicken", "busco_db": "passeriformes"},
-    "E_pictum": {"busco_seed_species": "chicken", "busco_db": "passeriformes"},
-    "R_gram": {"busco_seed_species": "botrytis_cinerea", "busco_db": "helotiales"},
-    "X_john": {"busco_seed_species": "maize", "busco_db": "liliopsida"},
-    "T_triandra": {"busco_seed_species": "maize", "busco_db": "poales"},
-    "H_bino": {"busco_seed_species": "chicken", "busco_db": "sauropsida"},
-    "P_vit": {"busco_seed_species": "chicken", "busco_db": "sauropsida"},
+    "A_magna": {"busco_seed_species": "chicken", "busco_db": "passeriformes_obd10"},
+    "E_pictum": {"busco_seed_species": "chicken", "busco_db": "passeriformes_obd10"},
+    "R_gram": {"busco_seed_species": "botrytis_cinerea", "busco_db": "helotiales_obd10"},
+    "X_john": {"busco_seed_species": "maize", "busco_db": "liliopsida_obd10"},
+    "T_triandra": {"busco_seed_species": "maize", "busco_db": "poales_obd10"},
+    "H_bino": {"busco_seed_species": "chicken", "busco_db": "sauropsida_obd10"},
+    "P_vit": {"busco_seed_species": "chicken", "busco_db": "sauropsida_obd10"},
 }
 
 
