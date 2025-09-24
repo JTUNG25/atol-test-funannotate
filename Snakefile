@@ -55,7 +55,7 @@ rule predict:
     threads: 32
     resources:
         runtime=int(24 * 60),
-        mem_gb=64,
+        mem_mb=int(64e3),
     container:
         funannotate
     shell:
@@ -88,7 +88,7 @@ rule reformat:
     threads: 1
     resources:
         runtime=10,
-        mem_gb=4,
+        mem_mb=int(4e3),
     container:
         bbmap
     shell:
