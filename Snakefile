@@ -42,7 +42,7 @@ rule predict:
         db=db_path,
         gm_key=gm_key,
     output:
-        gff="results/{genome}/funannotate/predict_results/annot.gff3",
+        gff="results/{genome}/funannotate/predict_results/{genome}.gff3",
     params:
         predict_params=lookup_predict_params,
         fasta=lambda wildcards, input: Path(input.fasta).resolve(),
@@ -55,7 +55,7 @@ rule predict:
     threads: 32
     resources:
         runtime=int(24 * 60),
-        mem_mb=int(64e3),
+        mem_mb=int(128e3),
     container:
         funannotate
     shell:
