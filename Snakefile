@@ -31,7 +31,7 @@ genome_config = {
 rule target:
     input:
         expand(
-            "results/{genome}/funannotate/predict_results/annot.gff3",
+            "results/{genome}/funannotate/predict_results/{genome}.gff3",
             genome=genome_config.keys(),
         ),
 
